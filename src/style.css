@@ -1,0 +1,7 @@
+.jumbotron {
+    background: linear-gradient(-45deg,#ee7752,#e73c7c,#2dffae,#e73c8e);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 1.5s ease infinite;
+    animation: Gradient 1.5s ease infinite;
+    margin-bottom: 25px;
+}
