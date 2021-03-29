@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Layout from './Layout'
 import {Form, Input, Button,Result} from 'antd'
-import {SignupPreload,signup} from '../../store/actions/auth.actions'
+import {SignupPreload,signup, ResetSignup} from '../../store/actions/auth.actions'
 import {useDispatch,useSelector} from 'react-redux'
 import {AuthState} from '../../store/reducers/auth.reducer'
 import {AppState} from '../../store/reducers/index'
@@ -38,7 +38,7 @@ const Signup = () => {
     const showError = () => {
         if(auth.signup.loaded && !auth.signup.success) {
             return <Result 
-                    status='success'
+                    status='warning'
                     title='注册失败'
                     subTitle={auth.signup.message}
                 />
@@ -47,7 +47,7 @@ const Signup = () => {
 
     useEffect(() => {
         return () => {
-
+            dispatch(ResetSignup())
         }
     },[])
 
